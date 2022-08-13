@@ -7,6 +7,9 @@ You can add the repository path to environment variables which is `Path` and ent
 ```
 $ python3 catcode.py [FileName] [Language]
 ```
+Or compile the python file to exe file
+
+The later one will be more convenient
 
 ## Support Language
 - cpp

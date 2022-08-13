@@ -31,7 +31,7 @@ empty = {
         'number': [],
         'string': [],
         'comment': [],
-        'BA': [],
+        'BA': [],   # before and after
         'linenumber': [],
         'clear': [],
     }

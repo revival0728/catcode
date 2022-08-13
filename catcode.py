@@ -4,7 +4,6 @@ import sys
 if __name__ == '__main__':
     executable = True
     fileName, language = '', ''
-    print(len(sys.argv))
     if len(sys.argv) == 1:
         print('Did Not Pass the File Argument')
         executable = False

@@ -13,7 +13,6 @@ def bySpace(line: str) -> str:
         ret.append(i)
         ret.append(' ')
     del ret[-1]
-    # print(ret)
     return ret
 
 def singleWords(section: str) -> list:

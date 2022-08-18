@@ -45,7 +45,30 @@ cpp = {
     'string': ['"', '\''],
     'before': ['('],
     'after': ['class'],
-    'special': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'cont', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned'],
+    'special': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'const', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned'],
+    'color': {
+        'symbol': ['red', []],
+        'special': ['yellow', ['bold']],
+        'microlike': ['green', ['bold']],
+        'number': ['magenta', []],
+        'string': ['green', []],
+        'comment': ['grey', []],
+        'BA': ['blue', []],
+        'linenumber': ['grey', []],
+        'clear': ['white', []],
+    }
+}
+
+
+python3 = {
+    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
+    'multiWords': ['int', 'float', 'str', 'class', 'if', 'for', 'else', 'elif', 'while', 'bool', 'return', 'cont', 'continue', 'break', 'True', 'False', 'del', 'async', 'import', 'as', 'def', 'try', 'except', 'not', 'in', 'with', 'from', 'None', 'lambda', 'raise'],
+    'comment': '#',
+    'keyWord': [],
+    'string': ['"', '\''],
+    'before': ['('],
+    'after': ['class'],
+    'special': ['int', 'float', 'str', 'class', 'if', 'for', 'else', 'elif', 'while', 'bool', 'return', 'cont', 'continue', 'break', 'True', 'False', 'del', 'async', 'import', 'as', 'def', 'try', 'except', 'not', 'in', 'with', 'from', 'None', 'lambda', 'raise'],
     'color': {
         'symbol': ['red', []],
         'special': ['yellow', ['bold']],

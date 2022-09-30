@@ -63,8 +63,7 @@ def getLanguageName(filename: str) -> str:
     else:
         return ''
 
-if __name__ == '__main__':
-    colorama.init()
+def CLI():
     executable = True
     fileName, language = '', ''
     if len(sys.argv) == 1:
@@ -76,3 +75,8 @@ if __name__ == '__main__':
         fileName, language = sys.argv[1], sys.argv[2]
     if executable:
         main(fileName, language)
+
+
+if __name__ == '__main__':
+    colorama.init()
+    CLI()

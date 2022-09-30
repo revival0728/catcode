@@ -37,6 +37,28 @@ empty = {
     }
 }
 
+DEFAULT = {
+    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
+    'multiWords': [],
+    'comment': '',
+    'keyWord': [],
+    'string': [],
+    'before': [],
+    'after': [],
+    'special': [],
+    'color': {
+        'symbol': ['red', []],
+        'special': ['yellow', ['bold']],
+        'microlike': ['green', ['bold']],
+        'number': ['magenta', []],
+        'string': ['green', []],
+        'comment': ['grey', []],
+        'BA': ['blue', []],
+        'linenumber': ['white', []],
+        'clear': ['white', []],
+    }
+}
+
 cpp = {
     'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
     'multiWords': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'cont', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned'],
@@ -54,7 +76,7 @@ cpp = {
         'string': ['green', []],
         'comment': ['grey', []],
         'BA': ['blue', []],
-        'linenumber': ['grey', []],
+        'linenumber': ['white', []],
         'clear': ['white', []],
     }
 }
@@ -77,7 +99,7 @@ python3 = {
         'string': ['green', []],
         'comment': ['grey', []],
         'BA': ['blue', []],
-        'linenumber': ['grey', []],
+        'linenumber': ['white', []],
         'clear': ['white', []],
     }
 }

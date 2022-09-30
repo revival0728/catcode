@@ -8,7 +8,7 @@ if __name__ == '__main__':
         print('Did Not Pass the File Argument')
         executable = False
     elif len(sys.argv) == 2 and executable:
-        fileName = sys.argv[1]
+        fileName, language = sys.argv[1], main.getLanguageName(sys.argv[1])
     elif executable:
         fileName, language = sys.argv[1], sys.argv[2]
     if executable:

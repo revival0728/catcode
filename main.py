@@ -49,6 +49,20 @@ def main(fileName: str, language: str = ''):
     code = lib.IO.merge(lines)
     print(code)
 
+def getFileExtension(filename: str) -> str:
+    lastDotIndex = -1
+    for index, s in enumerate(filename):
+        if s == '.':
+            lastDotIndex = index
+    return filename[lastDotIndex:]
+
+def getLanguageName(filename: str) -> str:
+    fileExtension = getFileExtension(filename)
+    if fileExtension in config.language_extension:
+        return config.language_extension[fileExtension]
+    else:
+        return ''
+
 if __name__ == '__main__':
     colorama.init()
     executable = True
@@ -57,7 +71,7 @@ if __name__ == '__main__':
         print('Did Not Pass the File Argument')
         executable = False
     elif len(sys.argv) == 2 and executable:
-        fileName = sys.argv[1]
+        fileName, language = sys.argv[1], getLanguageName(sys.argv[1])
     elif executable:
         fileName, language = sys.argv[1], sys.argv[2]
     if executable:

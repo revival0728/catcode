@@ -47,7 +47,7 @@ def main(fileName: str, language: str = ''):
     for id, i in enumerate(lines):
         lines[id] = lib.BAS.after(i)
     code = lib.IO.merge(lines)
-    print(code)
+    print(code, end = '\n\n')
 
 def getFileExtension(filename: str) -> str:
     lastDotIndex = -1

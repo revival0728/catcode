@@ -1,4 +1,7 @@
-empty = {
+# You can copy the EMPTY configuration to start your customizations
+
+# A empty configuration
+EMPTY = {
     'singleWords': '',
     'multiWords': [],
     'comment': '',
@@ -37,8 +40,10 @@ empty = {
     }
 }
 
+
+# DEFAULT configuration
 DEFAULT = {
-    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
+    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?`$',
     'multiWords': [],
     'comment': '',
     'keyWord': [],
@@ -59,15 +64,17 @@ DEFAULT = {
     }
 }
 
+
+# C++ configuration
 cpp = {
     'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
-    'multiWords': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'cont', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned'],
+    'multiWords': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'cont', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned', 'typedef', 'static'],
     'comment': '//',
     'keyWord': ['define', 'ifdef', 'ifndef', 'endif', 'include'],
     'string': ['"', '\''],
     'before': ['('],
     'after': ['class'],
-    'special': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'const', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned'],
+    'special': [],  # configured below
     'color': {
         'symbol': ['red', []],
         'special': ['yellow', ['bold']],
@@ -80,8 +87,10 @@ cpp = {
         'clear': ['white', []],
     }
 }
+cpp['special'] = cpp['multiWords']
 
 
+# Python3 configuration
 python3 = {
     'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
     'multiWords': ['int', 'float', 'str', 'class', 'if', 'for', 'else', 'elif', 'while', 'bool', 'return', 'cont', 'continue', 'break', 'True', 'False', 'del', 'async', 'import', 'as', 'def', 'try', 'except', 'not', 'in', 'with', 'from', 'None', 'lambda', 'raise'],
@@ -90,7 +99,7 @@ python3 = {
     'string': ['"', '\''],
     'before': ['('],
     'after': ['class'],
-    'special': ['int', 'float', 'str', 'class', 'if', 'for', 'else', 'elif', 'while', 'bool', 'return', 'cont', 'continue', 'break', 'True', 'False', 'del', 'async', 'import', 'as', 'def', 'try', 'except', 'not', 'in', 'with', 'from', 'None', 'lambda', 'raise'],
+    'special': [],  # configured below
     'color': {
         'symbol': ['red', []],
         'special': ['yellow', ['bold']],
@@ -103,3 +112,4 @@ python3 = {
         'clear': ['white', []],
     }
 }
+python3['special'] = python3['multiWords']

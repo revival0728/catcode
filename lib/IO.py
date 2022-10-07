@@ -17,6 +17,8 @@ def fixLineNumber(lineNumber: int, expectLength: int) -> str:
     return lineNumber
 
 def merge(lines: list) -> str:
+    while lines[-1] == []:
+        del lines[-1]
     expectLength = calcExpectLength(len(lines))
     for id, i in enumerate(lines):
         tmp = ''

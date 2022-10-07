@@ -3,6 +3,8 @@ from . import highlight as hlt
 config = {}
 
 def comment(line: list) -> list:
+    if len(config['comment']) == 0:
+        return line
     for index in range(len(line)):
         tmp, tmpId = '', index
         while len(tmp) != len(config['comment']) and tmpId < len(line):

@@ -68,7 +68,7 @@ DEFAULT = {
 # C++ configuration
 cpp = {
     'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
-    'multiWords': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'cont', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned', 'typedef', 'static'],
+    'multiWords': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'cont', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned', 'typedef', 'static', 'const', 'throw', 'nullptr'],
     'comment': '//',
     'keyWord': ['define', 'ifdef', 'ifndef', 'endif', 'include'],
     'string': ['"', '\''],

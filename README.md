@@ -14,7 +14,7 @@ python setup.py install
 ```
 
 
-or install from the binary file or the compressed file
+or install from the compressed file
 
 ## How to Use
 ### With Installation

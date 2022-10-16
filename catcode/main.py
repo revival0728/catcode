@@ -1,5 +1,5 @@
-import config
-import lib
+from . import config
+from . import lib
 import colorama
 import sys
 

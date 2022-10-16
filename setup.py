@@ -14,7 +14,7 @@ setup(
     ],
     entry_points = {
         'console_scripts': [
-            'catcode = main:CLI'
+            'catcode = catcode.main:CLI'
         ]
     }
 )

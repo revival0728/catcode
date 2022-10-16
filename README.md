@@ -3,10 +3,16 @@
 A repository that prints source code in terminal prettier
 
 ## Installation
-run
+### Linux
 ```
 sudo python3 setup.py install
 ```
+
+### Windows
+```
+python setup.py install
+```
+
 
 or install from the binary file or the compressed file
 

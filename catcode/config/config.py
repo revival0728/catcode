@@ -43,7 +43,7 @@ EMPTY = {
 
 # DEFAULT configuration
 DEFAULT = {
-    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?`$',
+    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?`$!',
     'multiWords': [],
     'comment': '',
     'keyWord': [],
@@ -67,7 +67,7 @@ DEFAULT = {
 
 # C++ configuration
 cpp = {
-    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
+    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?!',
     'multiWords': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'cont', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned', 'typedef', 'static', 'const', 'throw', 'nullptr'],
     'comment': '//',
     'keyWord': ['define', 'ifdef', 'ifndef', 'endif', 'include'],
@@ -92,7 +92,7 @@ cpp['special'] = cpp['multiWords']
 
 # Python3 configuration
 python3 = {
-    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?',
+    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?!',
     'multiWords': ['int', 'float', 'str', 'class', 'if', 'for', 'else', 'elif', 'while', 'bool', 'return', 'cont', 'continue', 'break', 'True', 'False', 'del', 'async', 'import', 'as', 'def', 'try', 'except', 'not', 'in', 'with', 'from', 'None', 'lambda', 'raise'],
     'comment': '#',
     'keyWord': [],
@@ -113,3 +113,28 @@ python3 = {
     }
 }
 python3['special'] = python3['multiWords']
+
+
+# javascript configuration
+javascript = {
+    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?$!',
+    'multiWords': ['if', 'import', 'else', 'for', 'while', 'class', 'None', 'Boolean', 'return', 'const', 'continue', 'break', 'true', 'false', 'String', 'var', 'function', 'document', 'from', 'export', 'let', 'Object', 'async', 'default', 'await', 'undefined', 'null'],
+    'comment': '//',
+    'keyWord': [],
+    'string': ['"', '\'', '`'],
+    'before': ['('],
+    'after': ['class'],
+    'special': [],  # configured below
+    'color': {
+        'symbol': ['red', []],
+        'special': ['yellow', ['bold']],
+        'microlike': ['green', ['bold']],
+        'number': ['magenta', []],
+        'string': ['green', []],
+        'comment': ['grey', []],
+        'BA': ['blue', []],
+        'linenumber': ['white', []],
+        'clear': ['white', []],
+    }
+}
+javascript['special'] = javascript['multiWords']

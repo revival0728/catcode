@@ -14,19 +14,7 @@ def fix(lines: list) -> list:
             del line[i]
     return lines
 
-def main(fileName: str, language: str = ''):
-    try:
-        code = lib.IO.readFromFile(fileName)
-        if language == '':
-            lib.setConfig(config.default_config)
-        else:
-            lib.setConfig(config.language_list[language])
-    except FileNotFoundError:
-        print('File Not Found')
-        return
-    except KeyError:
-        print('Unknown Language\nYou can customize yourself!')
-        return
+def parse(code: str) -> list:
     lines = lib.seperate.byLine(code)
     for id, i in enumerate(lines):
         lines[id] = lib.seperate.bySpace(i)
@@ -46,7 +34,30 @@ def main(fileName: str, language: str = ''):
         lines[id] = lib.BAS.before(i)
     for id, i in enumerate(lines):
         lines[id] = lib.BAS.after(i)
-    code = lib.IO.merge(lines)
+    if lines[-1] == []:
+        del lines[-1]
+
+    print(lines)
+    return lines
+
+
+def main(fileName: str, language: str = ''):
+    try:
+        code = lib.IO.readFromFile(fileName)
+        if language == '':
+            lib.setConfig(config.language_grammer['DEFAULT'])
+        else:
+            lib.setConfig(config.language_grammer[language])
+    except FileNotFoundError:
+        print('File Not Found')
+        return
+    except KeyError:
+        print('Unknown Language\nYou can customize yourself!')
+        return
+    except IsADirectoryError:
+        print('Cannot print directory')
+        return
+    code = lib.IO.merge(parse(code))
     print(code, end = '\n\n')
 
 def getFileExtension(filename: str) -> str:
@@ -64,18 +75,20 @@ def getLanguageName(filename: str) -> str:
         return ''
 
 def CLI():
-    executable = True
-    fileName, language = '', ''
     if len(sys.argv) == 1:
         print('Did Not Pass the File Argument')
-        executable = False
-    elif len(sys.argv) == 2 and executable:
-        fileName, language = sys.argv[1], getLanguageName(sys.argv[1])
-    elif executable:
-        fileName, language = sys.argv[1], sys.argv[2]
-    if executable:
+        return
+    printFileIcon = '--icon' in sys.argv
+    printFileName = '--name' in sys.argv
+    for i in sys.argv[1:]:
+        if i[0:2] == '--':
+            continue
+        fileName, language = i, getLanguageName(i)
+        if printFileName:
+            if printFileIcon:
+                print(config.language_icon[language], end = ' ')
+            print(i)
         main(fileName, language)
-
 
 if __name__ == '__main__':
     colorama.init()

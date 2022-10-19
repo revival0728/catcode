@@ -1,140 +1,35 @@
-# You can copy the EMPTY configuration to start your customizations
+from .default_config import DEFAULT
+from .cpp_config import cpp
+from .python3_config import python3
+from .javascript_config import javascript
 
-# A empty configuration
-EMPTY = {
-    'singleWords': '',
-    'multiWords': [],
-    'comment': '',
-    'keyWord': [],
-    'string': [],
-    'before': [],
-    'after': [],
-    'special': [],
+class Export:
+    def language_config(self) -> dict:
+        return {
+            'cpp': cpp,
+            'python3': python3,
+            'javascript': javascript,
+            'DEFAULT': DEFAULT,
+        }
 
-    # color
-    #     - grey
-    #     - red
-    #     - green
-    #     - yellow
-    #     - blue
-    #     - magenta
-    #     - cyan
-    #     - white
-    # attrs
-    #     - bold
-    #     - dark
-    #     - underline
-    #     - blink
-    #     - reverse
-    #     - concealed
-    'color': {
-        'symbol': [],
-        'special': [],
-        'microlike': [],
-        'number': [],
-        'string': [],
-        'comment': [],
-        'BA': [],   # before and after
-        'linenumber': [],
-        'clear': [],
-    }
-}
+    def language_grammer(self) -> dict:
+        language_config = self.language_config()
+        language_grammer = {}
+        for lan in language_config:
+            language_grammer[lan] = language_config[lan]['grammer']
+        return language_grammer
 
+    def language_extension(self) -> dict:
+        language_config = self.language_config()
+        language_extension = {}
+        for lan in language_config:
+            for ext in language_config[lan]['extension']:
+                language_extension[ext] = lan
+        return language_extension
 
-# DEFAULT configuration
-DEFAULT = {
-    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?`$!',
-    'multiWords': [],
-    'comment': '',
-    'keyWord': [],
-    'string': [],
-    'before': [],
-    'after': [],
-    'special': [],
-    'color': {
-        'symbol': ['red', []],
-        'special': ['yellow', ['bold']],
-        'microlike': ['green', ['bold']],
-        'number': ['magenta', []],
-        'string': ['green', []],
-        'comment': ['grey', []],
-        'BA': ['blue', []],
-        'linenumber': ['white', []],
-        'clear': ['white', []],
-    }
-}
-
-
-# C++ configuration
-cpp = {
-    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?!',
-    'multiWords': ['int', 'double', 'float', 'long', 'short', 'string', 'class', 'void', 'if', 'for', 'else', 'while', 'namespace', 'using', 'template', 'bool', 'return', 'auto', 'struct', 'friend', 'operator', 'cont', 'continue', 'break', 'true', 'false', 'new', 'delete', 'typename', 'protected', 'public', 'private', 'unsigned', 'typedef', 'static', 'const', 'throw', 'nullptr'],
-    'comment': '//',
-    'keyWord': ['define', 'ifdef', 'ifndef', 'endif', 'include'],
-    'string': ['"', '\''],
-    'before': ['('],
-    'after': ['class'],
-    'special': [],  # configured below
-    'color': {
-        'symbol': ['red', []],
-        'special': ['yellow', ['bold']],
-        'microlike': ['green', ['bold']],
-        'number': ['magenta', []],
-        'string': ['green', []],
-        'comment': ['grey', []],
-        'BA': ['blue', []],
-        'linenumber': ['white', []],
-        'clear': ['white', []],
-    }
-}
-cpp['special'] = cpp['multiWords']
-
-
-# Python3 configuration
-python3 = {
-    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?!',
-    'multiWords': ['int', 'float', 'str', 'class', 'if', 'for', 'else', 'elif', 'while', 'bool', 'return', 'cont', 'continue', 'break', 'True', 'False', 'del', 'async', 'import', 'as', 'def', 'try', 'except', 'not', 'in', 'with', 'from', 'None', 'lambda', 'raise'],
-    'comment': '#',
-    'keyWord': [],
-    'string': ['"', '\''],
-    'before': ['('],
-    'after': ['class'],
-    'special': [],  # configured below
-    'color': {
-        'symbol': ['red', []],
-        'special': ['yellow', ['bold']],
-        'microlike': ['green', ['bold']],
-        'number': ['magenta', []],
-        'string': ['green', []],
-        'comment': ['grey', []],
-        'BA': ['blue', []],
-        'linenumber': ['white', []],
-        'clear': ['white', []],
-    }
-}
-python3['special'] = python3['multiWords']
-
-
-# javascript configuration
-javascript = {
-    'singleWords': '#%^&*()-+/{[]}\\|:;"\'/.,<>~=?$!',
-    'multiWords': ['if', 'import', 'else', 'for', 'while', 'class', 'None', 'Boolean', 'return', 'const', 'continue', 'break', 'true', 'false', 'String', 'var', 'function', 'document', 'from', 'export', 'let', 'Object', 'async', 'default', 'await', 'undefined', 'null'],
-    'comment': '//',
-    'keyWord': [],
-    'string': ['"', '\'', '`'],
-    'before': ['('],
-    'after': ['class'],
-    'special': [],  # configured below
-    'color': {
-        'symbol': ['red', []],
-        'special': ['yellow', ['bold']],
-        'microlike': ['green', ['bold']],
-        'number': ['magenta', []],
-        'string': ['green', []],
-        'comment': ['grey', []],
-        'BA': ['blue', []],
-        'linenumber': ['white', []],
-        'clear': ['white', []],
-    }
-}
-javascript['special'] = javascript['multiWords']
+    def language_icon(self) -> dict:
+        language_config = self.language_config()
+        language_icon = {}
+        for lan in language_config:
+            language_icon[lan] = language_config[lan]['icon']
+        return language_icon

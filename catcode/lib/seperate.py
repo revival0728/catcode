@@ -3,10 +3,12 @@ from . import highlight as hlt
 config = {}
 
 def byLine(code: str) -> str:
-    return code.strip(' ').split('\n')
+    return code.strip('\n').split('\n')
 
 def bySpace(line: str) -> str:
-    line = line.replace(' '*4, '\t')
+    SPACE_4 = ' '*4
+    while SPACE_4 in line:
+        line = line.replace(SPACE_4, '\t')
     tmp = line.strip(' ').split(' ')
     ret = []
     for i in tmp:

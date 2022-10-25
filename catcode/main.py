@@ -1,7 +1,6 @@
+import sys
 from . import config
 from . import lib
-import colorama
-import sys
 
 def fix(lines: list) -> list:
     for line in lines:
@@ -37,7 +36,6 @@ def parse(code: str) -> list:
     if lines[-1] == []:
         del lines[-1]
 
-    print(lines)
     return lines
 
 
@@ -91,5 +89,4 @@ def CLI():
         main(fileName, language)
 
 if __name__ == '__main__':
-    colorama.init()
     CLI()

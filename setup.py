@@ -9,7 +9,6 @@ setup(
     packages = find_packages(),
     license = 'MIT',
     install_requires = [
-        'colorama>=0.4.5',
         'termcolor>=2.0.1'
     ],
     entry_points = {

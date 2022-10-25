@@ -12,7 +12,7 @@ def bySpace(line: str) -> str:
     tmp = line.strip(' ').split(' ')
     ret = []
     for i in tmp:
-        ret.append(i)
+        ret.append(i.replace('\t', SPACE_4))
         ret.append(' ')
     del ret[-1]
     return ret
@@ -34,7 +34,7 @@ def singleWords(section: str) -> list:
 
 def multiWords(line: hlt.Clear) -> list:
     for id, section in enumerate(line):
-        if type(section) != hlt.Clear:
+        if not isinstance(section, hlt.Clear):
             continue
         if section.content.strip() in config['multiWords']:
             line[id] = hlt.Special(section.content)
@@ -43,7 +43,7 @@ def multiWords(line: hlt.Clear) -> list:
 def number(line: hlt.Clear) -> list:
     numbers = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '0')
     for id, section in enumerate(line):
-        if type(section) != hlt.Clear or len(section.content) < 1:
+        if not isinstance(section, hlt.Clear) or len(section.content) < 1:
             continue
         if section.content[0] in numbers:
             line[id] = hlt.Number(section.content)

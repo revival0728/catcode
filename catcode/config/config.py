@@ -33,3 +33,6 @@ class Export:
         for lan in language_config:
             language_icon[lan] = language_config[lan]['icon']
         return language_icon
+    def language_name(self) -> list:
+        language_config = self.language_config()
+        return [ln for ln in language_config]

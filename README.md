@@ -13,7 +13,6 @@ sudo python3 setup.py install
 python setup.py install
 ```
 
-
 or install from the compressed file
 
 ## How to Use
@@ -28,6 +27,7 @@ python3 catcode.py [File Name] [Language]
 ```
 
 If the `[Language]` argument is empty then it will recognize it from the file extension
+
 
 ## Support Language
 - cpp

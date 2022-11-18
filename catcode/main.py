@@ -72,16 +72,22 @@ def getLanguageName(filename: str) -> str:
     else:
         return ''
 
-def CLI():
+def CLI() -> None:
     if len(sys.argv) == 1:
         print('Did Not Pass the File Argument')
         return
     printFileIcon = '--icon' in sys.argv
     printFileName = '--name' in sys.argv
+    forceLanguage = ''
+    for ln in config.langauge_name:
+        if f'--flx{ln}' in sys.argv:
+            forceLanguage = ln
     for i in sys.argv[1:]:
         if i[0:2] == '--':
             continue
         fileName, language = i, getLanguageName(i)
+        if len(forceLanguage) != 0:
+            language = forceLanguage
         if printFileName:
             if printFileIcon:
                 print(config.language_icon[language], end = ' ')

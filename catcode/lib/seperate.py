@@ -2,10 +2,10 @@ from . import highlight as hlt
 
 config = {}
 
-def byLine(code: str) -> str:
+def byLine(code: str) -> list:
     return code.strip('\n').split('\n')
 
-def bySpace(line: str) -> str:
+def bySpace(line: str) -> list:
     SPACE_4 = ' '*4
     while SPACE_4 in line:
         line = line.replace(SPACE_4, '\t')
@@ -32,7 +32,7 @@ def singleWords(section: str) -> list:
         tmp = ''
     return ret
 
-def multiWords(line: hlt.Clear) -> list:
+def multiWords(line: list) -> list:
     for id, section in enumerate(line):
         if not isinstance(section, hlt.Clear):
             continue
@@ -40,7 +40,7 @@ def multiWords(line: hlt.Clear) -> list:
             line[id] = hlt.Special(section.content)
     return line
 
-def number(line: hlt.Clear) -> list:
+def number(line: list) -> list:
     numbers = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '0')
     for id, section in enumerate(line):
         if not isinstance(section, hlt.Clear) or len(section.content) < 1:

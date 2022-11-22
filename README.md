@@ -1,8 +1,25 @@
+<div align="center">
+
 # catcode
+
+[![revival0728 - catcode](https://img.shields.io/badge/revival0728-catcode-2ea44f?logo=github)](https://github.com/revival0728/catcode)
+[![tag - v1.0.0](https://img.shields.io/badge/tag-v1.0.0-2ea44f)](https://github.com/revival0728/catcode/tree/v1.0.0)
+[![License - MIT](https://img.shields.io/badge/License-MIT-2ea44f)](https://github.com/revival0728/catcode/blob/master/LICENSE)
+[![Python - >=3.9](https://img.shields.io/badge/Python->=3.9-2ea44f?logo=python)](https://github.com/revival0728/catcode/blob/master/LICENSE)
+
+</div>
+
 ---
+
+## Overview
 A repository that prints source code in terminal prettier
 
+![preview1](https://i.imgur.com/h8hNC13.png)
+
 ## Installation
+First clone repository from github or download sources from release
+
+then run the following command
 ### Linux
 ```
 sudo python3 setup.py install
@@ -13,21 +30,16 @@ sudo python3 setup.py install
 python setup.py install
 ```
 
-or install from the compressed file
-
 ## How to Use
 ### With Installation
 ```
-catcode [File Name] [Language]
+catcode [File Name] [--name] [--icon] [--flx[Langauge Name]]
 ```
 
 ### Without Installation
 ```
-python3 catcode.py [File Name] [Language]
+python3 catcode.py [File Name] [--name] [--icon] [--flx[Langauge Name]]
 ```
-
-If the `[Language]` argument is empty then it will recognize it from the file extension
-
 
 ## Support Language
 - cpp
@@ -35,10 +47,3 @@ If the `[Language]` argument is empty then it will recognize it from the file ex
 - javascript (beta)
 
 ## Customize Language and Color
-You can edit the file `./catcode/config/config.py` to customize
-
-Than add your customize variables to `language_list` in `./catcode/config/__init__.py`
-
-And add the file extension to `language_extension` in `./catcode/config/__init__.py`
-
-The argument `singleWords`, `multiWords` are important. If they are not complete, the program will be unable to work properly

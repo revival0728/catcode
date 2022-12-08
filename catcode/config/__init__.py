@@ -1,17 +1,6 @@
-from . import config
+from .config import Export
 
-default_config = config.DEFAULT
-
-language_list = {
-    'cpp': config.cpp,
-    'python3': config.python3,
-    'javascript': config.javascript
-}
-
-language_extension = {
-    '.cpp': 'cpp',
-    '.h': 'cpp',
-    '.hpp': 'cpp',
-    '.py': 'python3',
-    '.js': 'javascript'
-}
+language_grammer = Export().language_grammer()
+language_icon = Export().language_icon()
+language_extension = Export().language_extension()
+langauge_name = Export().language_name()

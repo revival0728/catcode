@@ -4,7 +4,7 @@ import math
 config = {}
 
 def readFromFile(fullFileName):
-    with open(fullFileName, 'r') as f:
+    with open(fullFileName, 'r', encoding='utf-8') as f:
         return f.read()
 
 def calcExpectLength(lenOfList: int) -> int:

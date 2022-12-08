@@ -47,3 +47,33 @@ python3 catcode.py [File Name] [--name] [--icon] [--flx[Langauge Name]]
 - javascript (beta)
 
 ## Customize Language and Color
+The customization must be done before the installation for now.
+
+### Step 1
+Copy the `empty_config.py` file and rename it to `[language name]_config.py`
+
+### Step 2
+Edit the content of the file
+
+### Step 3
+Add the following code to the `config.py`
+
+```python
+from .default_config import DEFAULT
+from .cpp_config import cpp
+from .python3_config import python3
+from .javascript_config import javascript
+from .[langauge name]_config import [language name]     # modified
+
+class Export:
+    def language_config(self) -> dict:
+        return {
+            'cpp': cpp,
+            'python3': python3,
+            'javascript': javascript,
+            'DEFAULT': DEFAULT,
+            '[language name]': [language name],     # modified
+        }
+
+    ...
+```

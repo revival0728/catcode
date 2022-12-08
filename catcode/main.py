@@ -92,6 +92,9 @@ def CLI() -> None:
             if printFileIcon:
                 print(config.language_icon[language], end = ' ')
             print(i)
+        else:
+            if printFileIcon:
+                print(config.language_icon[language], end = '\n')
         main(fileName, language)
 
 if __name__ == '__main__':
